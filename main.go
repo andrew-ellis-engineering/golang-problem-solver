@@ -4,11 +4,15 @@ import (
 	"andrew-ellis-engineering/golang-problem-solver/arrays"
 	"andrew-ellis-engineering/golang-problem-solver/graphs"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	router := gin.Default()
+
+	router.Use(cors.Default())
+
 	router.GET("/ping", ping)
 
 	router.POST("/arrays/binarySearch", arrays.HandleBinarySearch)
