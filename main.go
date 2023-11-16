@@ -1,9 +1,8 @@
 package main
 
 import (
-	// "net/http"
-
 	"andrew-ellis-engineering/golang-problem-solver/arrays"
+	"andrew-ellis-engineering/golang-problem-solver/graphs"
 
 	"github.com/gin-gonic/gin"
 )
@@ -11,8 +10,11 @@ import (
 func main() {
 	router := gin.Default()
 	router.GET("/ping", ping)
-	router.POST("/binarySearch", arrays.HandleBinarySearch)
-	router.POST("/productExceptSelf", arrays.HandleProductExceptSelf)
+
+	router.POST("/arrays/binarySearch", arrays.HandleBinarySearch)
+	router.POST("/arrays/productExceptSelf", arrays.HandleProductExceptSelf)
+
+	router.POST("/graphs/countIslands", graphs.HandleIslandCount)
 
 	router.Run("localhost:8080")
 }

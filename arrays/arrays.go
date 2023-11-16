@@ -25,8 +25,8 @@ func binarySearch(bs BinarySearch) int {
 	return -1
 }
 
-func productExceptSelf(input ProductExceptSelf) []int {
-	nums := input.Array
+func productExceptSelf(pes ProductExceptSelf) []int {
+	nums := pes.Array
 	output := make([]int, len(nums))
 
 	prefix := 1
