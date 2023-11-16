@@ -1,10 +1,5 @@
 package arrays
 
-type BinarySearch struct {
-	Array  []int `json:"array"`
-	Target int   `json:"target"`
-}
-
 func binarySearch(bs BinarySearch) int {
 	nums := bs.Array
 	target := bs.Target
@@ -28,4 +23,23 @@ func binarySearch(bs BinarySearch) int {
 	}
 
 	return -1
+}
+
+func productExceptSelf(input ProductExceptSelf) []int {
+	nums := input.Array
+	output := make([]int, len(nums))
+
+	prefix := 1
+	for i, n := range nums {
+		output[i] = prefix
+		prefix *= n
+	}
+
+	postfix := 1
+	for i := len(nums) - 1; i >= 0; i-- {
+		output[i] *= postfix
+		postfix *= nums[i]
+	}
+
+	return output
 }

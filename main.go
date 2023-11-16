@@ -12,6 +12,7 @@ func main() {
 	router := gin.Default()
 	router.GET("/ping", ping)
 	router.POST("/binarySearch", arrays.HandleBinarySearch)
+	router.POST("/productExceptSelf", arrays.HandleProductExceptSelf)
 
 	router.Run("localhost:8080")
 }
